@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조교 체크리스트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>업무 체크리스트</h1>
+        </header>
+
+        <section class="add-task-section">
+            <form id="task-form">
+                <input type="text" id="task-desc" placeholder="할 일의 내용을 적어주세요" required>
+                <input type="date" id="task-date" required>
+                <select id="task-assignee">
+                    <option value="미배정">미배정</option>
+                    <option value="강별 조교쌤">강별 조교쌤</option>
+                    <option value="기타 조교쌤">기타 조교쌤</option>
+                </select>
+                <button type="submit">추가하기</button>
+            </form>
+        </section>
+
+        <main>
+            <div class="boards-container">
+                <!-- 할 일 보드 (조교별) -->
+                <section class="task-board" id="todo-board">
+                    <h2>진행 중인 일</h2>
+                    <div id="assignee-groups">
+                        <div class="empty-state">할 일을 추가해주세요!</div>
+                    </div>
+                </section>
+
+                <!-- 완료된 일 보드 -->
+                <section class="task-board" id="completed-board">
+                    <h2>공통 완료한 일</h2>
+                    <ul id="completed-list" class="task-list">
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
